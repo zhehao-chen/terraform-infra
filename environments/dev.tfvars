@@ -1,0 +1,9 @@
+environment     = "dev"
+minikube_cpus   = 2
+minikube_memory = 4096
+postgres_port   = 5432
+postgres_db     = "ecommerce_dev"
+postgres_user   = "admin"
+postgres_password = "devpassword"
+jenkins_port    = 8080
+k8s_namespace   = "dev"

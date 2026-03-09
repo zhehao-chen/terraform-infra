@@ -1,0 +1,9 @@
+environment     = "prod"
+minikube_cpus   = 4
+minikube_memory = 8192
+postgres_port   = 5434
+postgres_db     = "ecommerce_prod"
+postgres_user   = "admin"
+postgres_password = "prodpassword"
+jenkins_port    = 8082
+k8s_namespace   = "prod"

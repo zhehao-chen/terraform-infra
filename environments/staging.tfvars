@@ -1,0 +1,9 @@
+environment     = "staging"
+minikube_cpus   = 2
+minikube_memory = 6144
+postgres_port   = 5433
+postgres_db     = "ecommerce_staging"
+postgres_user   = "admin"
+postgres_password = "stagingpassword"
+jenkins_port    = 8081
+k8s_namespace   = "staging"
