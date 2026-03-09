@@ -16,6 +16,6 @@ resource "null_resource" "jenkins_check" {
   }
 
   provisioner "local-exec" {
-    command = "curl -s -o /dev/null -w '%{http_code}' http://localhost:${var.jenkins_port} || echo 'Warning: Jenkins not reachable at port ${var.jenkins_port}'"
+    command = "curl -s -o /dev/null http://localhost:${var.jenkins_port} || echo 'Warning: Jenkins not reachable at port ${var.jenkins_port}'"
   }
 }
