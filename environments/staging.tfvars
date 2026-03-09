@@ -1,7 +1,7 @@
 environment     = "staging"
 minikube_cpus   = 2
-minikube_memory = 6144
-postgres_port   = 5433
+minikube_memory = 3072
+postgres_port   = 5434
 postgres_db     = "ecommerce_staging"
 postgres_user   = "admin"
 postgres_password = "stagingpassword"

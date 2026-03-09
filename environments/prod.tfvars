@@ -1,7 +1,7 @@
 environment     = "prod"
 minikube_cpus   = 4
-minikube_memory = 8192
-postgres_port   = 5434
+minikube_memory = 3072
+postgres_port   = 5435
 postgres_db     = "ecommerce_prod"
 postgres_user   = "admin"
 postgres_password = "prodpassword"

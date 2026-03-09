@@ -1,7 +1,7 @@
 environment     = "dev"
 minikube_cpus   = 2
-minikube_memory = 4096
-postgres_port   = 5432
+minikube_memory = 3072
+postgres_port   = 5433
 postgres_db     = "ecommerce_dev"
 postgres_user   = "admin"
 postgres_password = "devpassword"
