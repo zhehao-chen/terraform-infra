@@ -1,33 +1,21 @@
+# Jenkins is installed locally (not managed by Terraform)
+# This module only references the existing local Jenkins instance
+
 terraform {
   required_providers {
-    docker = {
-      source  = "kreuzwerker/docker"
+    null = {
+      source  = "hashicorp/null"
       version = "~> 3.0"
     }
   }
 }
 
-resource "docker_image" "jenkins" {
-  name = "jenkins/jenkins:lts"
-}
-
-resource "docker_container" "jenkins" {
-  name  = "jenkins-${var.environment}"
-  image = docker_image.jenkins.image_id
-
-  ports {
-    internal = 8080
-    external = var.jenkins_port
+resource "null_resource" "jenkins_check" {
+  triggers = {
+    jenkins_url = "http://localhost:${var.jenkins_port}"
   }
 
-  volumes {
-    volume_name    = docker_volume.jenkins_home.name
-    container_path = "/var/jenkins_home"
+  provisioner "local-exec" {
+    command = "curl -s -o /dev/null -w '%{http_code}' http://localhost:${var.jenkins_port} || echo 'Warning: Jenkins not reachable at port ${var.jenkins_port}'"
   }
-
-  restart = "unless-stopped"
-}
-
-resource "docker_volume" "jenkins_home" {
-  name = "jenkins-home-${var.environment}"
 }
